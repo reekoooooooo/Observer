@@ -14,15 +14,16 @@ public class Dad extends Observer {
     @Override
     public void update(Cry cry, Baby baby) {
 
-        if (cry == Cry.ANGRY) {
-            System.out.println("Dad plays with " + baby.getName());
-            baby.receiveLove();
+        int choice = rand.nextInt(3);
 
-        } else if (cry == Cry.HUNGRY) {
-            System.out.println("Dad waits...");
+        if (choice == 0) {
+            System.out.println("Dad plays with nudges mom to help with " + baby.getName() + ".");
 
-        } else if (cry == Cry.WET) {
-            System.out.println("Dad calls Mom");
+        } else if (choice == 1) {
+            System.out.println("Dad yells for mom... to help with " + baby.getName() + ".");
+
+        } else {
+            System.out.println("Dad screams in frustration!");
         }
     }
 }

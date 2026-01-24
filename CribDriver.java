@@ -16,14 +16,14 @@ public class CribDriver {
 		int numBabies = getInt("How many babies do you have? ");
 
 		if(numBabies <= 0){
-			System.out.println("Sorry this is an invalid number of babies.");
+			System.out.println("Sorry this is an invalid number of babies. ");
 			return;
 		}
 
 		ArrayList<Baby> babies = new ArrayList<Baby>();
 
 		for(int i=0; i < numBabies; i++){
-			String babyName = getText("Enter Babie " + (i+1) + "'s Name: ");
+			String babyName = getText("Enter Baby " + (i+1) + "'s Name: ");
 			babies.add(new Baby(babyName));
 		}
 		

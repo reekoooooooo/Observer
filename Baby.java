@@ -25,17 +25,28 @@ list for observers, and inits randomness */
     }
     public String getName() { 
         return name;
-    }
+    } 
+    // Receive Love: 50/50 messages
     public void receiveLove() {
-        System.out.println(name + " is recieving love and is happy!!!");
+        if (rand.nextBoolean()){
+            System.out.println(name + " is recieving love and is happy!!!");
+        } else {
+            System.out.println(name + " is recieving love but is still upset...");
+        }
+            
     }
+    // Eat: 50/50 messages
     public void eat() {
-        System.out.println(name + "is eating.");
+        if (rand.nextBoolean()){
+            System.out.println(name + " is eating and is happy!!!");
+        } else {
+            System.out.println(name + " throws food all over the floor...");
+        }
     }
     public void getChanged() {
          System.out.println(name + "is getting a diaper change.");
     }
-     /* baby following rubes from subject */
+     /* baby following rules from subject */
     
     @Override
     public void registerObserver(Observer observer) { 
@@ -54,16 +65,16 @@ list for observers, and inits randomness */
     }
     /* crying methods triggers notifcations for observers. angry, hugnry, wet */
     public void angryCry() {
-        System.out.println( name + " is ANGRY!");
+        System.out.println( "WAAAAAAA! " + name + " is ANGRY!");
         notifyObservers(Cry.ANGRY);
     }
      public void hungryCry() {
-        System.out.println( name + " is HUNGRY!");
+        System.out.println( "MMMMMMMEH! " + name + " is HUNGRY!");
         notifyObservers(Cry.HUNGRY);
     }
 
      public void wetCry() {
-        System.out.println( name + " is WET!");
+    System.out.println( "AHHHH!  " + name + " is WET!");
         notifyObservers(Cry.WET);
     }
 }
